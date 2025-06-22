@@ -3,427 +3,617 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in to Facebook</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <title>Unknown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        body
-        {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .container
-        {
-            border:1px black;
-            height: 60vh;
-            width:450px;
-            box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: 9%;
-        }
-        .container h2
-        {
-            position: absolute;
-            top: 0%;
-            font-size: 40px;
-            color: blue;
-        }
-        .container p
-        {
-            position: absolute;
-            top: 15%;
-            font-size: 15px;
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #ffffff;
+        color: #000000;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        justify-content: center;
+        display: flex;
         }
 
-        
-        #two
+        .navbar
         {
-            position: absolute;
-            visibility: hidden;
-        }
-
-        .container input
-        {
-            height: 35px;
-            width: 350px;
-            padding: 5px;
-            margin: 10px;
-            margin-top: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        input::placeholder {
-            font-size: 18px;
-        }
-
-        .container button
-        {
-            height: 45px;
-            width: 365px;
-            margin-left: 10px;
-            cursor: pointer;
-        }
-
-        .passforgot
-        {
-            margin-top: 20px;
-        }
-
-        .passforgot a
-        {
-            text-decoration: none;
-            margin-left: 140px;
-            cursor: pointer;
-        }
-
-        .passforgot p
-        {
-            text-decoration: none;
-            margin-left: 190px;
-            position: absolute;
-            top: 71%;
-        }
-
-        .new
-        {
-            position:absolute;
-            margin-top: 30px;
-            cursor: pointer;
-        }
-
-        .buttonbox button
-        {
-            background-color: blue;
-            font-family:Arial;
-            font-size: 20px;
-            color: white;
-            border-radius: 12px;
-            border: solid 1px;
-        }
-        .new button
-        {
-            background-color: rgba(26, 161, 11, 0.826);
-            font-family:Arial;
-            font-size: 15px;
-            color: white;
-            border-radius: 12px;
-            border: solid 1px;
-            width: 150px;
-            margin-left:120px;
-        }
-
-        .container input:focus
-        {
-            height: 35px;
-            width: 350px;
-            padding: 5px;
-            margin: 10px;
-            margin-top: 5px;
-            border: solid 2px black;
-            outline: none;
-            border-radius: 8px;
-        }
-
-        .passbox {
-            position: relative;
-        }
-
-        .fa-eye {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-            cursor: pointer;
-        }
-        .fa-eye-slash {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-            cursor: pointer;
-        }
-
-        .show {
-            display: inline;
-        }
-
-        #footerone
-        {
-            position: absolute;
-            top: 92%;
-            font-size: 13px;
-            color: gray;
-            display: flex;
-            justify-content: center;
-            margin-left: 100px;
-        }
-        #dtwo
-        {
-            position: absolute;
-            visibility: hidden;
-        }
-
-
-        @media(max-width: 400px)
-        {
-            body
-        {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: linear-gradient(to right,rgba(255,0,0,0.1),rgba(0,0,255,0.2),rgba(169, 9, 255, 0.1));
-            overflow: hidden;
-        }
-        .container
-        {
-            border:none;
-            height: 100vh;
-            width:450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: 0%;
-            box-shadow: 0px 0px 0px 0px;
-        }
-        .container h2
-        {
-            position: absolute;
-            top: 10%;
-            font-size: 40px;
-            color: blue;
-            margin-left: 15px;
-        }
-        .container #one
-        {
-            visibility: hidden;
-        }
-
-        .container #two
-        {
-            visibility: visible;
-            top: 5%;
-        }
-        .container input
-        {
-            height: 35px;
-            width: 270px;
-            padding: 5px;
-            margin: 10px;
-            margin-top: 5px;
-            margin-left: 40px;
-            border: solid 0.5px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-left: 0px;
-        }
-
-        input::placeholder {
-            font-size: 15px;
-            color: rgb(55, 52, 52);
-        }
-
-        .container button
-        {
-            height: 40px;
-            width: 280px;
-            margin-left: 0px;
-            cursor: pointer;
-        }
-
-        .passforgot
-        {
-            margin-top: 20px;
-        }
-
-        .passforgot a
-        {
-            text-decoration: none;
-            margin-left: 85px;
-            cursor: pointer;
-            color: rgb(55, 52, 52);
-        }
-
-        .passforgot p
-        {
-            visibility: hidden;
-        }
-        .new
-        {
-            position:absolute;
-            top: 75%;
-            cursor: pointer;
-        }
-
-        .buttonbox button
-        {
-            background-color: blue;
-            font-family:Arial;
-            font-size: 20px;
-            color: white;
+            border: solid;
+            height: 10vh;
             border-radius: 40px;
-            border: solid 1px;
-        }
-        .new button
-        {
             background-color: transparent;
-            font-family:Arial;
-            font-size: 15px;
-            color: rgb(16, 34, 190);
-            border-radius: 40px;
-            border: solid 1px;
-            width: 280px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: fixed;
+            width: 90vw;
+            box-shadow: 0 3px 4px rgba(0,0,0, 0.5);
+            z-index: 2;
+            backdrop-filter:blur(2px);
         }
 
-        .container input:focus
+            html {
+    scroll-behavior: smooth;
+    }
+
+        .head
         {
-            height: 35px;
-            width: 270px;
-            padding: 5px;
-            margin: 10px;
-            margin-top: 5px;
-            border: solid 1px black;
-            outline: none;
-            border-radius: 8px;
-            margin-left: 0px;
+            font-size: 30px;
+            left: 5%;
+            position:absolute;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+            background: linear-gradient(to right, #ff6ec4, #7873f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 2rem;
+            }
+        
+
+        .navbar .menu button{
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 5px;
+            background-color: transparent;
         }
 
-        .passbox {
+        .navbar .menu button:hover{
+            font-size: 1.5rem;
+            }   
+
+            .hiddenmenu {
+            display: none;
+            }
+
+            #chapterMenu {
+                position: absolute;
+                top: 70px;
+                background-color: silver;
+                margin: 5px;
+                padding: 10px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                z-index: 999;
+                transition: all 0.3s ease;
+                }
+
+
+                #chapterMenu button{
+                    border: none;
+                    background-color: transparent;
+                }
+
+                #chapterMenu button:hover{
+                    font-size: 1.3rem;
+                    }
+
+            .menu p {
+            margin: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.2s;
+            }
+
+            .menu p:hover {
+            color: #007bff;
+            }
+
+
+
+            .wrapper
+            {
+                margin-top: 15vh;
+            }
+        .container,
+        .container2,
+        .container3,
+        .container4,
+        .container5,
+        .container6 {
+            width: 90vw;
+            border: solid;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: block;
+            position: relative;
+            margin-left: 45px;
+        }
+
+    
+
+        .darkmode{
+            color: white;
+            background-color: black;
+            transition: background-color .5s ease,color 0.5s ease;       
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+
+
+        .navdarkmode button{
+            color: white;
+            background-color: black;
+            text-shadow: 0 0 8px rgba(169, 26, 26, 0.2);
+            transition: background-color .5s ease,color 0.5s ease;
+        }
+        .client {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        display: flex;
+        gap: 20px;
+        }
+
+        .client button {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        cursor: pointer;
+        transition: font-size 0.3s ease;
+        }
+
+        .client button:hover {
+        font-size: 1.4rem;
+        }
+
+            #progress-wrapper {
+            position: fixed;
+            top: 20%;
+            right: 5%;
+            width: 25px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: 999;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transform:rotate(180deg)
+            }
+
+            #progress-bar {
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to bottom, #ffee00, rgb(162, 219, 39), #40ff0b);
+            transition: height 0.5s ease-in-out;
+            }
+
+
+            #progress-text {
+            text-align: center;
+            margin-top: 8px;
+            font-weight: bold;
+            }
+
+            .chapter {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            border: solid 1px #ccc;
+            transition: all 0.3s ease;
+            }
+
+            .chapter.completed {
+            background-color: #d4edda;
+            border-left: 6px solid green;
+            }
+
+
+        @media(max-width:440px){
+            .navbar{
+                height: 15vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .head
+            {
+                font-size: 40px;
+                position: absolute;
+                top: -10%;
+            }
+
+
+
+
+            .navbar .menu{
+                position: absolute;
+                top: 60%;
+                right: 10%;
+            }
+
+        .navbar .menu button{
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 5px;
+            background-color: transparent;
+            
+        }
+
+
+        .container,
+        .container2,
+        .container3,
+        .container4,
+        .container5{
+            width: 80vw;
+            border: solid;
+            padding: 20px;
+            margin: 0%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: block;
             position: relative;
         }
 
-        .fa-eye {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-            cursor: pointer;
-        }
-        .fa-eye-slash {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-            cursor: pointer;
+
+        .wrapper{
+            margin-top: 150px;
         }
 
-        .show {
-            display: inline;
+
+        .client {
+        position: absolute;
+        top: 70%;
+        right: 5%;
+        display: flex;
+        gap: 20px;
+        visibility: hidden;
         }
 
-        #footerone 
-        {
-            visibility:hidden;
-        }
-        #dtwo
-        {
-            position: absolute;
-            top: 94%;
-            color: black;
-            visibility:visible;
+        .client button {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        cursor: pointer;
+        transition: font-size 0.3s ease;
         }
 
         }
+
 
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>facebook</h2>
-        <p id="one">Log in to Facebook</p>
-        <p id="two">English(UK)</p>
+    <nav class="navbar">
+        <div class="head"><p>Psy</p></div>
+        <div class="menu">
+        <button title="Home" onclick="home()"><i class="fa-solid fa-house"></i>
+        <button title="User" onclick="user()"><i class="fa-solid fa-user"></i></i>
+        <button title="Chapters" onclick="bar()"><i class="fa-solid fa-bars"></i></i></i>
+        <button title="Dark Mode" onclick="modeswitch()"><i id="modeIcon" class="fa-solid fa-moon"></i></button>
+        </div>
+                <div id="chapterMenu" class="hiddenmenu">
+                    <button onclick="scrollToSection('c1')">Manipulation vs Influence</button> <br>
+                    <button onclick="scrollToSection('c2')">Manipulation vs Persuasion</button> <br>
+                    <button onclick="scrollToSection('c3')">Definition of Manipulation</button> <br>
+                    <button onclick="scrollToSection('c4')">Psycho Reassurance</button> <br>
+                    <button onclick="scrollToSection('c5')">Techniques</button> <br>
+                    <button>Types of manipulation coming soon</button>
+                </div>
 
-        <form action="https://www.facebook.com/share/r/18ECcBViGY/">
-            <div class="namebox">
-                <input type="text" placeholder="Email address or phone number"
-                required id="name" class="name">
-            </div>
+        <div class="client">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+        </div>
 
-            <div class="passbox">
-                <input type="password" placeholder="Password" required
-                id="pass" class="pass" oninput="toggleIcon()">
-                <i class="fa-solid fa-eye" id="icon" onclick="togglePassword()"></i>
-            </div>
+    </nav>
+    
 
-            <div class="buttonbox">
-                <button type="submit">Log in</button>
-            </div>
+                    <div id="progress-wrapper">
+                        <div id="progress-bar"></div>
+                    </div>
+                        <button onclick="resetProgress()" style="
+                            position: fixed;
+                            top: 70%;
+                            right: 5%;
+                            padding: 6px 12px;
+                            border-radius: 8px;
+                            background-color: crimson;
+                            color: white;
+                            font-weight: bold;
+                            border: none;
+                            cursor: pointer;
+                            z-index: 999;
+                        ">Reset Progress</button>
 
-            <div class="passforgot">
-                <a href="#">Forgotten account?</a>
-                <br>
-                <p>or</p>
-            </div>
-            <div class="new">
-                <button>Create new account</button>
-            </div>
 
-        </form>
-    </div>
+                    
+                    
 
-    <footer id="footerone">
-        <p>English (UK)
-            नेपाली
-            हिन्दी
-            Español
-            Português (Brasil)
-            日本語
-            Français (France)
-            Deutsch
-            Italiano
-            العربية
-            中文(简体)
-            <br>
+    <div class="wrapper">
+            <div id="c1" class="container">
+                    <h1>Manipulation vs Influence</h1> <br>
+
+                        The modern world has adopted the term influencer for people with a large social media following,
+                        capable of influencing others with their content. It doesn't take a particularly critical mind to recognize
+                        the source of this term as advertising. As consumer behavior evolves, advertisers have taken note and
+                        increasingly look to harness the power of influencers to gain attention for products. This is done
+                        variously through paid or unpaid sponsorships, promotional deals and agreements.
+                        In some cases, influencers disclose these agreements while, in others, they don't. Ethical questions are
+                        again raised, particularly if an influencer is ostensibly just a happy consumer but secretly on the payroll
+                        of the company which sells the product.
+                        Surely this whole moral quandary could have been avoided, if advertisers instead coined the term
+                        manipulator! Yet it's hardly surprising that they didn't. What this highlights is that, although people
+                        expect advertisers to be manipulative, it is still unthinkable that they would admit to it. Instagram stars
+                        happily list themselves as influencer on their profile page with seemingly no negative connotations.
+                        But the goals of many influencers, especially those who work with advertisers, are fundamentally
+                        manipulative. It's not even a grey-area issue.
+                        Influencers aim to shift products to their followers in order to make money.
+                        It is not possible to know if everyone they influence would benefit from the product, nor is it possible to
+                        know their financial situation or any specific circumstances. In this case, the influencer is putting their
+                        own interests first.
+                        Manipulation does not necessarily include an attempt to harm others.
+                        However, it must, to some degree, place one's own goals and interests first.
+                        This is part of the puzzle.
+                        Additionally, it is safest and most logical to refer to influence as a parent term of manipulation; one
+                        which includes manipulation and other methods of influence, such as inspiration and emulation.
+                            
+                        <br>
+                        <div class="chapter" id="chapter1">
+                            <button onclick="markComplete('chapter1')">✅ Mark as Complete</button>
+                            </div>
+                </div>
+
+                            <br>
+                    
+                <div id="c2" class="container2">
+                        <h1>Manipulation Vs Persuasion</h1>
+
+                    These terms might seem diametrically opposed, with persuasion acting as the "honest" form of
+                    manipulation, where the actor is up front about their goals and opinions. However, for the purposes of
+                    this book, it will be more useful to consider persuasion as a tier below manipulation.
+                    Persuasion, then, becomes a method of manipulation, which is a form of influence. Persuasion also
+                    happens to be one of the less effective methods of manipulation. How often have you been in a debate
+                    with someone else, only for them to hold up their hands and say "I concede, you are absolutely right"? It
+                    is probably possible for you to count these instances on one hand.
+                    It may be easy to persuade someone that smoking is unhealthy but is it easy to persuade them to quit? If
+                    it were so, governments wouldn't see the need or benefit in placing heavy taxes on tobacco products in
+                    order to discourage use. According to this book's definition, the government is trying to manipulate the
+                    consumption of tobacco and using a range of methods, including persuasion, to achieve that end.
+                    So what about other forms of influence? And other methods of manipulation? Well, manipulation needs
+                    to have intent and it ought to have some form of goal - even if that goal is just to create anarchy. A great
+                    filmmaker may influence the work of many others but it is clearly distinct from manipulation. The
+                    filmmaker doesn't set out to influence others (although they may), rather they achieve influence through
+                    the reaction of others to their work, resulting in inspiration and even emulation. Persuasion, likewise, is
+                    not the only method of manipulation one could employ. An easy alternative is lying, a form of deception.
+                    To lie and to be believed will inevitably change the perception of those who believe the lie.
+                    As has already been established, it is still manipulation whether it is successful or not.
+                    Persuasion, like influence, doesn't suffer from quite the same image problem as manipulation. In fact it's
+                    seen as a positive thing to be able to make a "persuasive argument." Although it does have a sinister
+                    tinge; the phrase "I can be very persuasive" implies some exertion of power over
+                            
+                                            <br>
+                        <div class="chapter" id="chapter2">
+                            <button onclick="markComplete('chapter2')">✅ Mark as Complete</button>
+                            </div>
+                
+                </div>
             
-            Sign UpLog inMessengerFacebook LiteVideoPlacesGamesMarketplaceMeta PayMeta StoreMeta QuestRay-Ban MetaMeta AIInstagramThreadsFundraisersServicesVoting Information CentrePrivacy PolicyPrivacy CentreGroupsAboutCreate adCreate PageDevelopersCareersCookiesAdChoicesTermsHelpContact uploading and non-usersSettingsActivity log
-            Meta © 2025
-            </p>
-    </footer>
 
-    <div id="dtwo">
-        <p>Meta</p>
-    </div>
+            <div id="c3" class="container3">
+                <h1> Definition Of Manipulation</h1>
+
+                    Manipulation is a form of intentional influence, characterized as an attempt, by a person or party
+                    (the manipulator), to change the behavior of another person or party (the target), typically with a view
+                    to achieving a goal in the manipulator's interests.
+                    There is no nefarious implication, nor is it specified whether or not the manipulator is acting in, against,
+                    or with no regard for the interests of the target. All are possible. This achieves a definition of
+                    manipulation which is not constrained by subjective ethical ideas. Although that doesn't mean you
+                    should abandon your morals as well!
+                    This definition is useful because it is objective and clear. Also, it is helpful because, in this book, you will
+                    learn techniques for manipulation that will help you to achieve your goals. In that respect, it would be a
+                    mistake to exclude persuasion, which absolutely can play an important role in manipulation. Two
+                    problems remain, however. The first relates to "intended influence." Intent is difficult because it implies
+                    responsibility. In actual fact, everyone manipulates everyone around them all the time, even from a
+                    young age. It would be wrong to exclude a child's temper tantrum from the umbrella of manipulation,
+                    just because they aren't old enough to rationalize their behavior. The same applies to adult temper
+                    tantrums, for that matter. Intent, therefore, does not imply conscious behavior - it can also be instinctive.
+                    This also allows for the, very real, presence of "naturally manipulative" persons.
+                    The second problem is the disappointingly vague ending: "typically to achieve a goal in the manipulator's
+                    interests." Not only is it problematic to define "the manipulator's interests," there is a catch-all ambiguity
+                    in the inclusion of "typically." This part serves only to create a normalized idea of manipulation for the
+                    purposes of this book and absolutely wouldn't suit a more general definition. After all, how can someone
+                    perfectly know their own interests? It is of course successfully manipulate someone and for the result to
+                    still be one’s own demise.
+
+                                            <br>
+                        <div class="chapter" id="chapter3">
+                            <button onclick="markComplete('chapter3')">✅ Mark as Complete</button>
+                            </div>
+                </div>
+
+            <div class="container4" id="c4">
+                <h2> PSYCHO  REASSURANCES </h2>
+                    <h2> EXPLANATION: </h2>
+
+                    In manipulation, psycho reassurance is a term used to describe a manipulative strategy in which an
+                    individual employs psychological strategy to comfort or reassure another individual in an attempt to win
+                    their trust or establish control over them. To control the victim's feelings and behaviour, this may entail
+                    giving them a sense of security or validation. It is a type of emotional manipulation that can be applied in
+                    a variety of settings, including romantic relationships, business dealings, and even darker circumstances
+                    where one person tries to take advantage of the weaknesses of another. It's critical to recognise these
+                    strategies and uphold appropriate limits in interpersonal relationships.So that this manipulative
+                    technique is dark and dangerous according to the user. The precise implementation of this technique will
+                    be uploaded further. <br> <br>
+                    THIS METHOD IS A RISKY ONE CUZ IT WILL BACKFIRE YOU ANYTIME IF YOU MAKE ANY MISTAKE IN A
+                    SINGLE MOVE <br>
+
+                    1.**Fake Compliments **: Complimenting is the must thing in every kind of manipulation , it’s an
+                    ultimate move to gain the trust of the target.Which will give a boost to their ego and make them feel
+                    superior.Use compliments over the target’s best things it will make the target to think you are best
+                    supporter for them, <br>
+
+                    2. **Understanding**: Expressing empathy on the target also it’s not sympathy but sometimes you need
+                    to show sympathy like “omg I feel so bad for you , how much pain can you endure?” These words will
+                    sometimes weaken the target that they are in stress and you need to understand the target emotion and
+                    act regarding it and situation. <br>
+
+                    3. **Fake Promises**: Making fake promises about a positive thing which will eventually end in your
+                    favour like “I swear you will win this competition”or you need to make fake promises which is just an
+                    ideal thought like “I promise that you are the best one in doing this” This will gain a good trust from the
+                    target. <br>
+
+                    4. **Reassurance**: You always have to repeat or reassure several things which are is the target
+                    positive? If not then you have to secure the score on relaxing him and giving some positive thoughts, this
+                    will result in whenever they feel weak they will search for you.Keep the target not to worry about
+                    anything else. <br>
+                    5. **Overprotection**: This is a best technique to make the target depend on you, all you have to do is
+                    to take control or responsibility for the target’s issues or their decisions (In a friendly manner).Taking
+                    over their will is very important so do it carefully.
+                    6. **Secret Sharing**: To gain trust you have to create fake secrets about you like “you know what I truly
+                    loved a girl but I never told this to anyone cuz I can’t trust any of my friends”Fake secrets like these make
+                    the target feel like he is secret keeper and will gain you trust.
+                    <br>
+                    7. **Victim Role**:( Don’t use this frequently ) As I said in the above method you need to get sympathy
+                    from the target by using those fake secrets like showing yourself depressed of something.This will make
+                    the target to be always with you.
+                        <br>
+                    8. **Gaslighting**: You need to use Gaslighting very specifically in this scenario You need to make the
+                    target doubt themselves but you need to be sound like positive one don’t expose yourself as a rude one.
+                    But you need to act rude too so that the target will feel embarrassed and let you take the decisions.
+                        <br>
+                        (THE ABOVE MENTIONED METHODS ARE COMMONLY USED, LEARN THEM AND IMPLEMENT IT
+                        ACCORDING TO THE PERSON AND SCENARIO FOR YOU)
+
+                        <br>
+                        <div class="chapter" id="chapter4">
+                            <button onclick="markComplete('chapter4')">✅ Mark as Complete</button>
+                            </div>
+            </div>
+
+            <div class="container5" id="c5">
+                    <h1> Introduction to a new technique</h1>
+                    The "Psyche Rebirth Protocol" is a fictional or metaphorical technique that one might use in a narrative
+                    or story. It's not based on real-world psychology or science. Here's an explanation of how it could work in
+                    a fictional context: <br>
+
+                    The Psyche Rebirth Protocol is a profound and mystical practice designed to help individuals undergo a
+                    transformative and rejuvenating experience for their inner selves. It's often used in stories or settings
+                    where a character needs to heal, grow, or overcome deep emotional or psychological challenges.
+                        <br>
+                    Key components of the protocol may include: <br>
+
+                    1. Meditation and Visualization: Practitioners engage in deep meditation to explore the depths of their
+                    consciousness. They visualize their inner world, where they can confront and address unresolved issues
+                    or past traumas. <br>
+
+                    2. Symbolic Rituals: Participants might perform symbolic rituals or ceremonies that represent the process
+                    of letting go of the old and embracing the new. These rituals could involve elements like fire, water, or
+                    sacred objects. <br>
+
+                    3. Guided Journey: A spiritual or mystical guide may assist the individual through the process, helping
+                    them navigate their inner landscape, confront their inner demons, and discover hidden strengths.
+                        <br>
+                    4. Reintegration: The protocol involves a phase of reintegrating the healed and transformed self with the
+                    person's everyday life. This can include setting new intentions, making positive life changes, and
+                    fostering a deeper sense of purpose. <br>
+
+                    Ultimately, the Psyche Rebirth Protocol is a narrative device used to symbolize personal growth and
+                    transformation. It can serve as a powerful plot element in a story, as characters face their inner demons
+                    and emerge stronger, wiser, and more self-aware. <br>
+                                            <br>
+                        <div class="chapter" id="chapter5">
+                            <button onclick="markComplete('chapter5')">✅ Mark as Complete</button>
+                            </div>
+
+                </div>
+        </div>
+    
+<script>
+    function home() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+        function modeswitch(){
+            const body = document.body;
+            const nav = document.getElementById("navbar")
+            body.classList.toggle("darkmode");
+            body.classList.toggle("darkmodech");
+            body.classList.toggle("navdarkmode");  
+
+        const icon = document.getElementById("modeIcon");
+
+        if (icon.classList.contains("fa-moon")) {
+            icon.classList.replace("fa-moon", "fa-sun");
+        } else {
+            icon.classList.replace("fa-sun", "fa-moon");
+        }
+    }
 
 
-    <script>
-        function toggleIcon() {
-            var input = document.getElementById('pass');
-            var icon = document.getElementById('icon');
-            if (input.value.length > 0) {
-                icon.classList.add('show');
-            } else {
-                icon.classList.remove('show');
-            }
+        function bar(){
+
+            const hid = document.getElementById("chapterMenu")
+            hid.classList.toggle("hiddenmenu")
         }
 
-        function togglePassword() {
-            var input = document.getElementById('pass');
-            var icon = document.getElementById('icon');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.replace('fa-eye', 'fa-eye-slash');
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
             } else {
-                input.type = 'password';
-                icon.classList.replace('fa-eye-slash', 'fa-eye');
+                alert("Section not found 😢");
             }
+            
+
+            const hid = document.getElementById("chapterMenu")
+            hid.classList.toggle("hiddenmenu")
         }
 
 
-        console.log("<h1>Disclaimer</h1><br>");
-        console.log("This is just a project replica if facebook log in page. This project is made only for educational purpose only. Thank You");
-    </script>
+            const chapters = ['chapter1', 'chapter2', 'chapter3', 'chapter4', 'chapter5'];
+
+            window.onload = function() {
+                updateProgress();
+            }
+
+            function markComplete(chapterId) {
+                localStorage.setItem(chapterId, 'completed');
+                document.getElementById(chapterId).classList.add('completed');
+                updateProgress();
+            }
+
+                function updateProgress() {
+                    let completed = 0;
+
+                    chapters.forEach(id => {
+                        const element = document.getElementById(id);
+                        if (localStorage.getItem(id) === 'completed') {
+                            element.classList.add('completed');
+                            completed++;
+                        } else {
+                            element.classList.remove('completed');
+                        }
+                    });
+
+                    const percentage = (completed / chapters.length) * 100;
+                    document.getElementById("progress-bar").style.height = percentage + "%";
+                }
+
+                function resetProgress() {
+                    const confirmReset = confirm("Are you sure you want to reset all progress?");
+                    if (!confirmReset) return;
+
+                    chapters.forEach(id => {
+                        localStorage.removeItem(id);
+                        document.getElementById(id).classList.remove('completed');
+                    });
+
+                    updateProgress();
+                }
+
+
+            
+</script>
+
+</script>
+
+
+</script>
 </body>
 </html>
