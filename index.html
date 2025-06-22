@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to Facebook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <style>
+        body
+        {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .container
+        {
+            border:1px black;
+            height: 60vh;
+            width:450px;
+            box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 9%;
+        }
+        .container h2
+        {
+            position: absolute;
+            top: 0%;
+            font-size: 40px;
+            color: blue;
+        }
+        .container p
+        {
+            position: absolute;
+            top: 15%;
+            font-size: 15px;
+        }
+
+        
+        #two
+        {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .container input
+        {
+            height: 35px;
+            width: 350px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input::placeholder {
+            font-size: 18px;
+        }
+
+        .container button
+        {
+            height: 45px;
+            width: 365px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .passforgot
+        {
+            margin-top: 20px;
+        }
+
+        .passforgot a
+        {
+            text-decoration: none;
+            margin-left: 140px;
+            cursor: pointer;
+        }
+
+        .passforgot p
+        {
+            text-decoration: none;
+            margin-left: 190px;
+            position: absolute;
+            top: 71%;
+        }
+
+        .new
+        {
+            position:absolute;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .buttonbox button
+        {
+            background-color: blue;
+            font-family:Arial;
+            font-size: 20px;
+            color: white;
+            border-radius: 12px;
+            border: solid 1px;
+        }
+        .new button
+        {
+            background-color: rgba(26, 161, 11, 0.826);
+            font-family:Arial;
+            font-size: 15px;
+            color: white;
+            border-radius: 12px;
+            border: solid 1px;
+            width: 150px;
+            margin-left:120px;
+        }
+
+        .container input:focus
+        {
+            height: 35px;
+            width: 350px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 5px;
+            border: solid 2px black;
+            outline: none;
+            border-radius: 8px;
+        }
+
+        .passbox {
+            position: relative;
+        }
+
+        .fa-eye {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            cursor: pointer;
+        }
+        .fa-eye-slash {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            cursor: pointer;
+        }
+
+        .show {
+            display: inline;
+        }
+
+        #footerone
+        {
+            position: absolute;
+            top: 92%;
+            font-size: 13px;
+            color: gray;
+            display: flex;
+            justify-content: center;
+            margin-left: 100px;
+        }
+        #dtwo
+        {
+            position: absolute;
+            visibility: hidden;
+        }
+
+
+        @media(max-width: 400px)
+        {
+            body
+        {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to right,rgba(255,0,0,0.1),rgba(0,0,255,0.2),rgba(169, 9, 255, 0.1));
+            overflow: hidden;
+        }
+        .container
+        {
+            border:none;
+            height: 100vh;
+            width:450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0%;
+            box-shadow: 0px 0px 0px 0px;
+        }
+        .container h2
+        {
+            position: absolute;
+            top: 10%;
+            font-size: 40px;
+            color: blue;
+            margin-left: 15px;
+        }
+        .container #one
+        {
+            visibility: hidden;
+        }
+
+        .container #two
+        {
+            visibility: visible;
+            top: 5%;
+        }
+        .container input
+        {
+            height: 35px;
+            width: 270px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 5px;
+            margin-left: 40px;
+            border: solid 0.5px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 0px;
+        }
+
+        input::placeholder {
+            font-size: 15px;
+            color: rgb(55, 52, 52);
+        }
+
+        .container button
+        {
+            height: 40px;
+            width: 280px;
+            margin-left: 0px;
+            cursor: pointer;
+        }
+
+        .passforgot
+        {
+            margin-top: 20px;
+        }
+
+        .passforgot a
+        {
+            text-decoration: none;
+            margin-left: 85px;
+            cursor: pointer;
+            color: rgb(55, 52, 52);
+        }
+
+        .passforgot p
+        {
+            visibility: hidden;
+        }
+        .new
+        {
+            position:absolute;
+            top: 75%;
+            cursor: pointer;
+        }
+
+        .buttonbox button
+        {
+            background-color: blue;
+            font-family:Arial;
+            font-size: 20px;
+            color: white;
+            border-radius: 40px;
+            border: solid 1px;
+        }
+        .new button
+        {
+            background-color: transparent;
+            font-family:Arial;
+            font-size: 15px;
+            color: rgb(16, 34, 190);
+            border-radius: 40px;
+            border: solid 1px;
+            width: 280px;
+        }
+
+        .container input:focus
+        {
+            height: 35px;
+            width: 270px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 5px;
+            border: solid 1px black;
+            outline: none;
+            border-radius: 8px;
+            margin-left: 0px;
+        }
+
+        .passbox {
+            position: relative;
+        }
+
+        .fa-eye {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            cursor: pointer;
+        }
+        .fa-eye-slash {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            cursor: pointer;
+        }
+
+        .show {
+            display: inline;
+        }
+
+        #footerone 
+        {
+            visibility:hidden;
+        }
+        #dtwo
+        {
+            position: absolute;
+            top: 94%;
+            color: black;
+            visibility:visible;
+        }
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>facebook</h2>
+        <p id="one">Log in to Facebook</p>
+        <p id="two">English(UK)</p>
+
+        <form action="https://www.facebook.com/share/r/18ECcBViGY/">
+            <div class="namebox">
+                <input type="text" placeholder="Email address or phone number"
+                required id="name" class="name">
+            </div>
+
+            <div class="passbox">
+                <input type="password" placeholder="Password" required
+                id="pass" class="pass" oninput="toggleIcon()">
+                <i class="fa-solid fa-eye" id="icon" onclick="togglePassword()"></i>
+            </div>
+
+            <div class="buttonbox">
+                <button type="submit">Log in</button>
+            </div>
+
+            <div class="passforgot">
+                <a href="#">Forgotten account?</a>
+                <br>
+                <p>or</p>
+            </div>
+            <div class="new">
+                <button>Create new account</button>
+            </div>
+
+        </form>
+    </div>
+
+    <footer id="footerone">
+        <p>English (UK)
+            नेपाली
+            हिन्दी
+            Español
+            Português (Brasil)
+            日本語
+            Français (France)
+            Deutsch
+            Italiano
+            العربية
+            中文(简体)
+            <br>
+            
+            Sign UpLog inMessengerFacebook LiteVideoPlacesGamesMarketplaceMeta PayMeta StoreMeta QuestRay-Ban MetaMeta AIInstagramThreadsFundraisersServicesVoting Information CentrePrivacy PolicyPrivacy CentreGroupsAboutCreate adCreate PageDevelopersCareersCookiesAdChoicesTermsHelpContact uploading and non-usersSettingsActivity log
+            Meta © 2025
+            </p>
+    </footer>
+
+    <div id="dtwo">
+        <p>Meta</p>
+    </div>
+
+
+    <script>
+        function toggleIcon() {
+            var input = document.getElementById('pass');
+            var icon = document.getElementById('icon');
+            if (input.value.length > 0) {
+                icon.classList.add('show');
+            } else {
+                icon.classList.remove('show');
+            }
+        }
+
+        function togglePassword() {
+            var input = document.getElementById('pass');
+            var icon = document.getElementById('icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+
+
+        console.log("<h1>Disclaimer</h1><br>");
+        console.log("This is just a project replica if facebook log in page. This project is made only for educational purpose only. Thank You");
+    </script>
+</body>
+</html>
